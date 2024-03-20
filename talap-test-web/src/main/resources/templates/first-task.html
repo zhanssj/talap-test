@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First task</title>
+</head>
+<body>
+<div th:replace="~{fragments.html :: navigation}"></div>
+
+<h3>Average calculator</h3>
+
+<form action="/first-task" method="post">
+    <label for="nums">Enter numbers separated by space</label>
+    <input id="nums" name="nums" required th:value="${original}">
+    <button type="submit">Calculate</button>
+</form>
+
+<div th:if="${res != null}" style="display: flex">
+    <span>Result is: </span>
+    <span th:text="${res}">show result</span>
+</div>
+
+<div th:if="${error != null}" style="display: flex; color: red">
+    <span th:text="${error}">show error</span>
+</div>
+</body>
+</html>

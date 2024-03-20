@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second task</title>
+</head>
+<body>
+<div th:replace="~{fragments.html :: navigation}"></div>
+
+<h3>Palindrome checker</h3>
+
+<form action="/second-task" method="post">
+    <label for="text">Enter text to check for palindrome:</label>
+    <input id="text" name="text" required th:value="${original}">
+    <button type="submit">Check</button>
+</form>
+
+<div th:if="${res != null}" style="display: flex">
+    <span th:text="${res}">show result</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Third task</title>
+</head>
+<body>
+<div th:replace="~{fragments.html :: navigation}"></div>
+
+<h3>Number reverse</h3>
+
+<form action="/third-task" method="post">
+    <label for="num">Enter number to reverse it:</label>
+    <input id="num" name="numStr" type="number" required th:value="${original}">
+    <button type="submit">Reverse</button>
+</form>
+
+<div th:if="${res != null}" style="display: flex">
+    <span>Reversed number is: </span>
+    <span th:text="${res}">show result</span>
+</div>
+
+<div th:if="${error != null}" style="display: flex; color: red">
+    <span th:text="${error}">show error</span>
+</div>
+</body>
+</html>
